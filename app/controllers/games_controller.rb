@@ -41,10 +41,10 @@ class GamesController < ApplicationController
   end
 
   def english_word
-    # attempt = params[:guess].downcase
-    # response = URI.open("https://wagon-dictionary.herokuapp.com/#{attempt}")
-    # json = JSON.parse(response.read)
-    # json['found']
+    attempt = params[:guess].downcase
+    response = URI.open("https://wagon-dictionary.herokuapp.com/#{attempt}")
+    json = JSON.parse(response.read)
+    json['found']
   end
 
   def compute_score

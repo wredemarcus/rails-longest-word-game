@@ -1,0 +1,17 @@
+<h1>Your grid is 👩🏽‍🏫</h1>
+ <div class="grid">
+    <% @letters.each do |letter|%>
+      <div class="letter">
+        <%= letter %>
+      </div>
+    <% end %>
+  </div>
+<br>
+<br>
+<h2>Build a word out of the grid:</h2>
+<form class="input" action="/score" method="post">
+  <input class="suggestion" type="text" name="guess" placeholder="Give it your best">
+  <input class="submit" type="submit" value="Enter your guess" >
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letters, @letters %>
+</form>
